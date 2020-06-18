@@ -30,12 +30,14 @@ public class LoginViewModel extends ViewModel {
             Toast.makeText(context,user.getEmail(),Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(context,"Please enter valid email",Toast.LENGTH_SHORT).show();
+            return;
         }
 
         if (user.isValidPassword()) {
             Toast.makeText(context,user.getPassword(),Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(context,"Please enter valid password",Toast.LENGTH_SHORT).show();
+            return;
         }
     }
 
