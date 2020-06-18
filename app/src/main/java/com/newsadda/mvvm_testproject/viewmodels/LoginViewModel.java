@@ -1,16 +1,10 @@
 package com.newsadda.mvvm_testproject.viewmodels;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.text.TextUtils;
-import android.util.Patterns;
 import android.widget.Toast;
-
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
-import androidx.databinding.library.baseAdapters.BR;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
 import com.newsadda.mvvm_testproject.model.User;
 
 public class LoginViewModel extends ViewModel {
@@ -19,6 +13,7 @@ public class LoginViewModel extends ViewModel {
     public MutableLiveData<String> password = new MutableLiveData<>();
 
     private User user;
+    @SuppressLint("StaticFieldLeak")
     private Context context;
 
     public LoginViewModel(User user, Context context) {
@@ -40,7 +35,7 @@ public class LoginViewModel extends ViewModel {
         if (user.isValidPassword()) {
             Toast.makeText(context,user.getPassword(),Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(context,"Please enter valid email",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,"Please enter valid password",Toast.LENGTH_SHORT).show();
         }
     }
 

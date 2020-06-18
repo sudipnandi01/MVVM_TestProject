@@ -27,18 +27,12 @@ public class User {
 
     public boolean isValidEmail() {
 
-        if (this.email != null && !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.length() > 5) {
-            return true;
-        } else
-            return false;
+        return this.email != null && !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.length() > 5;
     }
 
     public boolean isValidPassword() {
 
-        if (password.length() > 5) {
-            return true;
-        } else
-            return false;
+        return this.email != null && password.length() > 5;
     }
 
 }
